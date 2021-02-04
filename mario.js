@@ -1,5 +1,10 @@
+var emptyString = ' '
+var brick = "#"
+
 
 printPyramid(5);
+// TODO #2
+// Take in user input for the height
 
 
 /*
@@ -12,12 +17,22 @@ printPyramid(5);
  *        ####
  *       #####
  *      ######
- */
-function printPyramid(height) {
-    console.log("Uh oh... the pyramid is under construction.");
-    console.log("Check back soon, our developers are hard at work as we speak!");
+ */// string brick
+function repeatString(string, times) {
+  var repeatedString = "";
+  while (times > 0) {
+    repeatedString += string;
+    times--;
+  }
+  return repeatedString;
+}
 
-    // TODO
+function printPyramid(height) {
+    for(let i = 0;i < height;i ++){
+      console.log(repeatString(emptyString,height - i) + repeatString(brick,i+1) + brick);
+    }
+
+    // TODO #1
     // print that pyramid!
 
 }
